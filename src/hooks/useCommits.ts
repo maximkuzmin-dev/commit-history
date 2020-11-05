@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { CommitModel } from '../components/models/commit-model';
+import { CommitModel } from '../models/commit-model';
 
 import { API_URL } from '../constants/api-url';
 
@@ -13,6 +13,7 @@ export const useCommits = () => {
     const fetchCommits = async () => {
       setIsError(false);
       setIsLoading(true);
+
       try {
         const { data } = await axios.get<CommitModel[]>(API_URL);
         setData({ commits: data });

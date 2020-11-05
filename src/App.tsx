@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import { CommitItem } from './components/commit-item';
+import { CommitList } from './components/commit-list';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
-      <CommitItem />
+      <CommitList />
     </div>
   );
 }
