@@ -4,8 +4,12 @@ import { CommitModel } from '../models/commit-model';
 
 import { API_URL } from '../constants/api-url';
 
+interface DataI {
+  commits: CommitModel[];
+}
+
 export const useCommits = () => {
-  const [data, setData] = useState<{ commits: CommitModel[] }>({ commits: [] });
+  const [data, setData] = useState<DataI>({ commits: [] });
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
