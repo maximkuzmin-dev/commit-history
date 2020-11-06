@@ -11,7 +11,7 @@ interface SubDataProps {
 const SubData: React.FC<SubDataProps> = ({ isLink = false, label, value, sha }) => {
   return (
     <div className="sub-data">
-      <Badge pill color="warning">
+      <Badge pill color="secondary">
         {label}
       </Badge>
       {isLink ? <a href={value}>{sha}</a> : value}

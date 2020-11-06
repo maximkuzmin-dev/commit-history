@@ -1,35 +1,27 @@
 import React from 'react';
-import { Badge, ListGroupItem } from 'reactstrap';
+import { ListGroupItem } from 'reactstrap';
 
 import './index.css';
+
+import { SubData } from '../sub-data';
 
 interface CommitItemProps {
   authorName: string;
   authorEmail: string;
   commitMessage: string;
+  commitUrl: string;
+  date: string;
+  sha: string;
 }
 
-const CommitItem: React.FC<CommitItemProps> = ({ authorName, authorEmail, commitMessage }) => {
+const CommitItem: React.FC<CommitItemProps> = ({ authorName, authorEmail, commitMessage, commitUrl, date, sha }) => {
   return (
     <ListGroupItem className="list-item" color="info">
-      <div className="sub-data">
-        <Badge pill color="warning">
-          author
-        </Badge>
-        {authorName}
-      </div>
-      <div className="sub-data">
-        <Badge pill color="warning">
-          email
-        </Badge>
-        {authorEmail}
-      </div>
-      <div className="sub-data">
-        <Badge pill color="warning">
-          message
-        </Badge>
-        {commitMessage}
-      </div>
+      <SubData label="hash" value={commitUrl} isLink={true} sha={sha} />
+      <SubData label="date" value={new Date(date).toDateString()} />
+      <SubData label="author" value={authorName} />
+      <SubData label="email" value={authorEmail} />
+      <SubData label="message" value={commitMessage} />
     </ListGroupItem>
   );
 };

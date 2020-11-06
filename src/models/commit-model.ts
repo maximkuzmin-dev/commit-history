@@ -10,11 +10,11 @@ interface TreeDataI {
 
 interface CommitDataI {
   author: AuthorDataI;
-  html_url: string;
   message: string;
   tree: TreeDataI;
 }
 
 export interface CommitModel {
   commit: CommitDataI;
+  html_url: string;
 }

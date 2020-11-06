@@ -14,6 +14,7 @@ const CommitList = () => {
     isError,
     isLoading,
   } = useCommits();
+  console.log(commits);
 
   return (
     <div className="container">
@@ -21,12 +22,15 @@ const CommitList = () => {
       {!isError && !isLoading && (
         <ListGroup>
           <Media>Commits of this project:</Media>
-          {commits.map(({ commit }) => (
+          {commits.map(({ commit, html_url }) => (
             <CommitItem
               key={commit.tree.sha}
               authorName={commit.author.name}
               authorEmail={commit.author.email}
               commitMessage={commit.message}
+              commitUrl={html_url}
+              date={commit.author.date}
+              sha={commit.tree.sha}
             />
           ))}
         </ListGroup>
