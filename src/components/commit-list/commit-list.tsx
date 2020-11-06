@@ -14,7 +14,6 @@ const CommitList = () => {
     isError,
     isLoading,
   } = useCommits();
-  console.log(commits);
 
   return (
     <div className="container">
