@@ -1,4 +1,7 @@
-To run app:
+# Commit history
+
+## Running locally:
+
 1. Clone down repository.
 2. Open terminal.
 3. Move to project repository folder.

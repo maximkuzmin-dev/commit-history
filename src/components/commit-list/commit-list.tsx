@@ -21,9 +21,9 @@ const CommitList = () => {
       {!isError && !isLoading && (
         <ListGroup>
           <Media>Commits of this project:</Media>
-          {commits.map(({ commit }, index) => (
+          {commits.map(({ commit }) => (
             <CommitItem
-              key={index}
+              key={commit.tree.sha}
               authorName={commit.author.name}
               authorEmail={commit.author.email}
               commitMessage={commit.message}
